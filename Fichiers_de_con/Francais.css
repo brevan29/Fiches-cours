@@ -1,0 +1,47 @@
+@charset "utf-8";
+body{
+    padding-top: 10px;
+    display: grid;
+    grid-template-rows: auto*100;
+    font-family: "Roboto";
+    font-size: small;
+    color: rgb(0, 61, 85);
+    background-color: rgb(255, 234, 182);
+}
+#entete{
+    grid-row: 1;
+    font-size: 35;
+    font-family: "Roboto";
+    padding-bottom: 10px;
+    text-align: center;
+}
+bui{
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: bold;
+    font-size: normal;
+} 
+.invalide{
+    color : darkred
+}
+.valide{
+    color : darkgreen
+}
+.sspartie{
+    padding-left: 20px;
+}
+h1{
+    color: darkred;
+    text-decoration: underline;
+    font-size: x-large;
+}
+.chXaY{
+    color: black;
+    text-decoration: underline;
+    font-size: medium;
+}
+
+.chX{
+    font-size: x-small;
+}
+.titrePartie{ font-size: large;text-decoration: underline;}
