@@ -1,6 +1,7 @@
 var Raccourcis = new Map();
 Raccourcis.set("GC", "Georges Canguilhem");
 Raccourcis.set("D", "Descartes");
+Raccourcis.set("CB", "Claude Bernard");
 
 function ChangerRaccourci(AC){
     let EltsAC = document.getElementsByClassName(AC)
