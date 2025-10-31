@@ -1,6 +1,6 @@
 @charset "utf-8";
 body{
-    padding-top: 10px;
+    padding: 10px;
     display: grid;
     grid-template-rows: auto*100;
     font-family: "Roboto";
