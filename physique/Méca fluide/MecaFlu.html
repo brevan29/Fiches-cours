@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="MecaFlu.css"/>
+  <title>Mécanique des fluides</title>
+</head>
+<body>
+  <a href="../../index.html" style="font-size: x-small;">Retour à la page d'accueil</a>
+  <h1>Mecanique des Fluides</h1>
+  <section id="MF1">
+    <h2>Cinématique des fluides</h2>
+<h3>Façons de voir un fluide<h3>
+  <h4>Vision Lagrangienne:</h4>
+  <p>On suit le mouvement d'une seule et même particule fluide au cours du temps, pour decrire l’écoulement du fluide on procède ainsi pour toutes les particules du fluide<br>
+Avantage :une PF est un sys fermé donc on peut lui appliquer les lois de la méca/thermo.<br>
+Inconvenient: Peu pratique pour exprimer les C.L.</p>
+  <h4>Vision Eulerienne</h4>
+  <p>On étudie les mouvements du fluide en un point donné de l’espace, plusieurs particules fluide s’y succèderont au cours du temps. Pour décrire l’écoulement du fluide on procède ainsi pour tous les points de l’espace.</p>
+  <h5>Courants</h5>
+  <p>Dans cette vision, ça n’a aucun sens de parler de trajectoire d’où la définition de :<br>
+  <bui>Ligne de courant :</bui> Ligne de champ du champ des vitesses, une courbe tangente en chacun de ses points au vecetur v(M,t)<br>
+  <bui>Tube de courant</bui> : Surface formée par toutes les lignes de courant passant par un contour fermé<br>
+    <ul>Avantages
+      <li>Permet de définir un champ en tout point de l’espace, à tout instant</li>
+      <li>Les champs se retrouvent dans de nombreux domaines de la physique et les outils
+        mathématiques se transposent d’un domaine à l’autre</li>
+      <li>Permet de traduire les conditions aux limites</li>
+    </ul>
+    <ul>Inconvenients
+      <li>Le vecteur vitesse ne concerne pas la même PF au cours du temps</li>
+      <li>Le decoupage du fluide autour du point M est un système ouvert</li>
+    </ul>
+  </p>
+  <h3>La derivée particulaire</h3>
+  <p>La vartiaction infinitésimales est de f est : df = (df/dx)&times;dx
+    <mark>(faire plusieurs variables)</mark><br>
+    On introduit l’opérateur dérivée particulaire (notée D&bull;/Dt) : d&bull;/dt = &part;&bull;/&part;t+(v.grad)&bull; <mark>LATEX</mark><br>
+    <h4>Cas de la masse volumique</h4>
+    d&rho;/dt = &part;&rho;/&part;t+(v.grad)&rho; &emsp; Dérivée particulaire = dérivée locale + dérivée convective<br>
+    <bui>Écoulement incompressible</bui> : Toutes les particules de fluide gardent le même volume au cours du temps
+    (en maths : D&rho;/Dt = 0</p>
+  <h4>Dérivée particulaire du vecteur vitesse</h4>
+  <p>a=Dv/Dt=&part;v/&part;t + (v.grad)v <mark>Ce sont des fucking vecteurs</mark><br>
+  (a = a<sub>locale</sub>+a<sub>convective</sub>)
+  On peut montrer que : (v.grad)&bull; = grad(&bull;/2)+(rot(v))^v <mark>encore une fois ce sont des vecteurs</mark>
+  </p>
+  <h3>Équation de conservation de la masse</h3>
+  <h4>Définitions</h4>
+  <bui>Débit volumique D<sub>V</sub></bui> : (Volume de fluide traversant une surface orientée
+  par unité de temps, compté positivement s’il est dans le sens du vecteur surface)
+  &delta;V = D<sub>V</sub>.&delta;t (D<sub>V</sub> en m<sup>3</sup>.s<sup>-1</sup>)<br>
+  le debit volumique est égal à trevers une surface (S) est égal au flux du vecteur v à travers
+  cette surface : &#x222C;v.dS (sur (S)) <mark>VECTEURS</mark><br>
+  <bui>Débit massique D<sub>m</sub></bui> : (masse de fluide traversant une surface orientée
+  par unité de temps, compté positivement s’il est dans le sens du vecteur surface)
+  &delta;m = D<sub>m</sub>.&delta;t (D<sub>m</sub> en kg.s<sup>-1</sup>)<br>
+  <bui>Vecteur densité de courant</bui> : j(M,t) = &rho;(M,t).v(M,t)<br>
+  <bui>propriété</bui> : Dm &#x222C;j.dS (sur (S))  <br>
+  <bui>Pour un fluide incompressible : </bui> D<sub>m</sub> = &rho;D<sub>V</sub><br>
+  <h4>Eq locale de cons de la masse</h4>
+  Sur une conduite cylindrique d’axe Ox, de sextion dS contenant un fluide en écoulement (sans source ou puits de fluide)<br>
+  Le vecteur densité de courant s’écrit pour une seule dimension de l’espace j=j<sub>x</sub>(x,t)u<sub>x</sub><br>
+  le système étudié est le volume dV=dS.dx (compris entre x et x+dx)<br>
+  En partant de d&sup2;m=&delta;&sup2;m (variation de masse entre t et t+dt, masse entrant algébriquement dans le sys pdt dt) <br>
+  on doit trouver &part;j<sub>x</sub>/&part;x+&part;&rho;/&part;t = 0 en 1D, <br>
+  div(j)+&part;&rho;/&part;t = 0 en 3D (où, dans les deux cas, j=&rho;v)
+  
+  <h3>Définitions et propriétés de qqes écoulements remarquables</h3>
+  <h4>Écoulement stationnaire</h4>
+  <h5>Definition : </h5> Si tous les champs eulériens décrivant le système sont indépendant du temps alors écoulement stationnaire
+  <h5>Propriétés :</h5>
+  &emsp; &bull; Le vecteur j est à flux conservatif (div(j) = 0 (local) &hArr; &#x222F; j.dS<sub>ext</sub> (sur (S)) = 0 (global))  <br>
+  &emsp; &emsp; &bull; <bui>Loi des branches</bui> : en RS, le débit massique se conserve : D<sub>m</sub> = cte<br>
+  &emsp; &emsp; &bull; <bui>Loi des noeuds</bui> : En RS au niveau d'une intersection : D<sub>m1</sub> =D<sub>m2</sub>+D<sub>m3</sub>
+  
+  <h4>Écoulement incompressible</h4>
+  Def, voir plus haut
+  <h5>Propriétés</h5>
+  &emsp; &bull; Le vecteur v est à flux conservatif (div(v) = 0 (local) &hArr; &#x222F; v.dS<sub>ext</sub> (sur (S)) = 0 (global))  <br>
+  &emsp; &emsp; &bull; <bui>Loi des branches</bui> : en RS, le débit volumique se conserve : D<sub>v</sub> = cte<br>
+  &emsp; &emsp; &bull; <bui>Loi des noeuds</bui> : En RS au niveau d'une intersection : D<sub>v1</sub> =D<sub>v2</sub>+D<sub>v3</sub>
+  
+  <h4>Ecoulement irrotationnel</h4>
+  Opérateur Rotationnel : rot(v)
+  <h5>Définition</h5>
+  si rot(v) est nul en tout point (le vecteur tourbillon est nul en tout point) alors l’écoulement est irrotationnel
+  <h5>Propriétés</h5>
+  &emsp; &bull; Si rot(v) = 0 alors v=grad(&phi;), &phi; étant appelé <u><i>potentiel de vitesse</i></u>
+  
+  <h3>Conditions aux limites</h3>
+  <h4>Cas d’un obstacle fluide</h4>
+  En tout point d’un obstacle fixe et imperméable, la composante normale du champ de vitesse doit s’annuler, 
+le champ de vitesses est tangent à la surface d’un obstacle en tout point (v(M).n=0)
+  <h4>Cas d’un obstacle déformable ou en mouvement</h4>
+  En tout point de la surface d’un obstacle imperméable, la composante normale du champ ded vitesse du fluide
+doit être égale à la composante normale du point lié à l’obstacle
+  <h4>Cas d’une interface entre deux fluides</h4>
+  v<sub>1</sub>.n=v<sub>2</sub>.n (voir cas précédent)
+  </section>
+</body>
+</html>

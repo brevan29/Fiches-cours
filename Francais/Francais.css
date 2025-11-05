@@ -1,16 +1,13 @@
 @charset "utf-8";
 body{
     padding: 10px;
-    display: grid;
-    grid-template-rows: auto*100;
     font-family: "Roboto";
-    font-size: 15;
+    font-size: 15px;
     color: rgb(0, 61, 85);
     background-color: rgb(255, 234, 182);
 }
 #entete{
-    grid-row: 1;
-    font-size: 35;
+    font-size: 35px;
     padding-bottom: 10px;
     text-align: center;
 }
