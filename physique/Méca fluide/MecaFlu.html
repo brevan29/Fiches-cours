@@ -44,7 +44,7 @@ Inconvenient: Peu pratique pour exprimer les C.L.</p>
   <h4>Dérivée particulaire du vecteur vitesse</h4>
   <p>a=Dv/Dt=&part;v/&part;t + (v.grad)v <mark>Ce sont des fucking vecteurs</mark><br>
   (a = a<sub>locale</sub>+a<sub>convective</sub>)
-  On peut montrer que : (v.grad)&bull; = grad(&bull;/2)+(rot(v))^v <mark>encore une fois ce sont des vecteurs</mark>
+  On peut montrer que : (v.grad)&bull; = grad(&bull;/2)+(rot(v))&wedge;v <mark>encore une fois ce sont des vecteurs</mark>
   </p>
   <h3>Équation de conservation de la masse</h3>
   <h4>Définitions</h4>
@@ -98,6 +98,49 @@ le champ de vitesses est tangent à la surface d’un obstacle en tout point (v(
 doit être égale à la composante normale du point lié à l’obstacle
   <h4>Cas d’une interface entre deux fluides</h4>
   v<sub>1</sub>.n=v<sub>2</sub>.n (voir cas précédent)
+  </section>
+  <section id="MF2">
+  <h2>Dynamique des fluides</h2>
+  <h3>Forces qui s'exercent sur une particule de fluide</h3>
+  <h4>Forces volumiques</h4>
+  &rightarrow; Actions à <i>distance</i> s'exerçant sur le <i>volume</i> d'une particule de fluide <br>
+  <bui>Le poids</bui> : dF<sub>pes</sub> = dm.g &hArr; f<sub>g</sub> = &rho;&times;g <br>
+  Noter le &laquo; F &raquo; qui représente une force et &laquo; f &raquo; qui désigne une force volumique <br>
+  <bui>Force d'inertie d'entrainement</bui> : f<sub>ie</sub> = -&rho;a<sub>e</sub><br>
+  <bui>Force d'inertie de Coriolis</bui> : f<sub>ic</sub> = -&rho;a<sub>c</sub><br>
+<span style="font-size: 9px">Il suffit de remplacer dm (resp m) par &rho; (car dm=&rho;dV (resp m=&rho;V))</span>
+  <h4>Forces surfacique de pression</h4>
+  <bui>Force élémentaire de Pression dans un fluide :</bui> dF = P(M,t).dS<sub>int</sub><br>
+  <bui>Equivalent volumique des forces de pression</bui> dF<sub>P</sub> = -grad(P)dV &hArr; F<sub>P</sub>
+  <h4>Forces surfacique de viscosité</h4>
+  <bui>Force de viscosité</bui> : dF = &eta; &part;v<sub>x</sub>/&part;y &times; dS.u<sub>x</sub><br>
+  <bui>Equivalent volumique des force de viscosité</bui> f<sub>v</sub>=&eta;&Delta;v
+    <h3>Equation de Navier-Stokes</h3>
+    <bui>Version 1 :</bui> &rho; (&part;v/&part;t + (v.grad)v) = -grad(P)+&eta;&Delta;v+f (f=résultante des forces volumiques)<br>
+    <bui>Version 2 :</bui> &part;v/&part;t + (v.grad)v) = -1/&rho; +&nu;&Delta;v+1/&rho;f (&nu; = viscosité cinématique définie par : &nu;=&eta;/&rho;)<br>
+    <bui>Version 3 :</bui> &rho;(&part;v/&part;t +grad(v²/2)+rot(v)&wedge;v) = &Sigma;F<sub>ext</sub>(/dV)<br>
+    <span style="font-size: 11px">Rq : Il y a 4 inconnues  le champ de vitesse (3 inconnues scalaires) et le champ de pression (1 inconnue scalaire), N.S. nous donne 3 equations, la 4<sup>ème</sup>
+      étant l'équation de conservation de la masse (cf plus haut)</span><br>
+    <span style="font-size: 9px; color: darkred;">L'équation n'est pas linéaire, </span><span style="font-size : 9px">si v<sub>1</sub> et v<sub>2</sub> sont solution,
+     &alpha;v<sub>1</sub>+&beta;v<sub>2</sub> ne l'est pas à priori</span>
+    <h4>Exemples d'écoulement : Couette plan :</h4>
+    Eq de NS en considérant que les forces de Pression + gravité + viscosité, on obtient : &part;v<sub>x</sub>/&part;t = &nu;&part;&sup2;v<sub>x</sub>/&part;y&sup2; (&nu;v)<br>
+    C'est une équation de diffusion avec un coefficient de diffusion égal à la viscosité cinématique. Le terme &eta;&Delta;v correspond au transport diffusif.<br>
+    <bui>En R.S.</bui> : &part;v<sub>x</sub>/&part;t = &nu;&part;&sup2;v<sub>x</sub>/&part;y&sup2;, MAIS &part;v<sub>x</sub>/&part;t = 0 et &nu; &ne; 0 donc &part;&sup2;v<sub>x</sub>/&part;y&sup2; = 0 <br>
+    Apreès intégrations : v<sub>x</sub>(y) : Ay+B (A &ne; 0, B = 0, condition d'adhérence)
+    <h3>Le Nombre de Reynolds pour caractériser un écoulement</h3>
+    Le transport de quantité de mouvement peut se faire de deux manières :<br>
+    &emsp; &bull; <bui>Transport diffusif</bui>, lié à la viscosité, s'effectue localement et perpendiculairement au champ des vitesses, caractérisé par &eta;&Delta;v dans N.S.<br>
+    &emsp; &bull; <bui>Transport convectif</bui> lié à l'inertie, s'effectue localement et tangentiellement au champ des vitess, caractérisé par (v.grad)v dans N.S.<br>
+    Donc on garde le plus important des deux pour simlifier l'équation : <br>
+    Nombre de Reynolds : ||Terme convectif||/||Terme diffusif|| = ||&rho;(v.grad)v||/||&eta;&Delta;v|| (<span style="font-size: 9px">||.|| signifie que l'on fait une estimation en ordre de grandeur)</span><br>
+    &emsp;&bull; <bui>Re &gt;&gt;1 : </bui>Terme diffusif négligeable<br>
+    &emsp;&bull; <bui>Re &lt;&lt;1 </bui>Terme convectif négligeable<br>
+    &emsp;&bull; <bui>Re 	&#126; 1</bui> Les deux termes sont à prendre en compte<br>
+    <h3>Forcee de trainée</h3>
+    Expression générale de la force de trainée : F = -1/2 C<sub>x</sub>&rho;Sv&sup2;u<sub>x</sub> <br>
+    Pour Re &lt; 1, la force de trainée est due à la viscosité et est linéaire par rapport à la vitesse F=kv et pour une sphère : F = -6&pi;&eta;Rv (R rayon de la sphère)<br>
+    Pour 10<sup>3</sup>&lt;Re&lt;10<sup>5</sup> : la force est due au terme convectif et est <i>quadratique</i> par rapport à la vitesse : F = k&centerdot;||v||v et pour une sphère : F=-1/2 C<sub>x</sub>&rho;&pi;R&sup2;||v||v
   </section>
 </body>
 </html>
