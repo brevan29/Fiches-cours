@@ -117,7 +117,7 @@ doit être égale à la composante normale du point lié à l’obstacle
   <bui>Equivalent volumique des force de viscosité</bui> f<sub>v</sub>=&eta;&Delta;v
     <h3>Equation de Navier-Stokes</h3>
     <bui>Version 1 :</bui> &rho; (&part;v/&part;t + (v.grad)v) = -grad(P)+&eta;&Delta;v+f (f=résultante des forces volumiques)<br>
-    <bui>Version 2 :</bui> &part;v/&part;t + (v.grad)v) = -1/&rho; +&nu;&Delta;v+1/&rho;f (&nu; = viscosité cinématique définie par : &nu;=&eta;/&rho;)<br>
+    <bui>Version 2 :</bui> &part;v/&part;t + (v.grad)v) = -1/&rho; grad(P)+&nu;&Delta;v+1/&rho;f (&nu; = viscosité cinématique définie par : &nu;=&eta;/&rho;)<br>
     <bui>Version 3 :</bui> &rho;(&part;v/&part;t +grad(v²/2)+rot(v)&wedge;v) = &Sigma;F<sub>ext</sub>(/dV)<br>
     <span style="font-size: 11px">Rq : Il y a 4 inconnues  le champ de vitesse (3 inconnues scalaires) et le champ de pression (1 inconnue scalaire), N.S. nous donne 3 equations, la 4<sup>ème</sup>
       étant l'équation de conservation de la masse (cf plus haut)</span><br>
@@ -127,7 +127,7 @@ doit être égale à la composante normale du point lié à l’obstacle
     Eq de NS en considérant que les forces de Pression + gravité + viscosité, on obtient : &part;v<sub>x</sub>/&part;t = &nu;&part;&sup2;v<sub>x</sub>/&part;y&sup2; (&nu;v)<br>
     C'est une équation de diffusion avec un coefficient de diffusion égal à la viscosité cinématique. Le terme &eta;&Delta;v correspond au transport diffusif.<br>
     <bui>En R.S.</bui> : &part;v<sub>x</sub>/&part;t = &nu;&part;&sup2;v<sub>x</sub>/&part;y&sup2;, MAIS &part;v<sub>x</sub>/&part;t = 0 et &nu; &ne; 0 donc &part;&sup2;v<sub>x</sub>/&part;y&sup2; = 0 <br>
-    Apreès intégrations : v<sub>x</sub>(y) : Ay+B (A &ne; 0, B = 0, condition d'adhérence)
+    Après intégrations : v<sub>x</sub>(y) : Ay+B (A &ne; 0, B = 0, condition d'adhérence)
     <h3>Le Nombre de Reynolds pour caractériser un écoulement</h3>
     Le transport de quantité de mouvement peut se faire de deux manières :<br>
     &emsp; &bull; <bui>Transport diffusif</bui>, lié à la viscosité, s'effectue localement et perpendiculairement au champ des vitesses, caractérisé par &eta;&Delta;v dans N.S.<br>
@@ -141,6 +141,38 @@ doit être égale à la composante normale du point lié à l’obstacle
     Expression générale de la force de trainée : F = -1/2 C<sub>x</sub>&rho;Sv&sup2;u<sub>x</sub> <br>
     Pour Re &lt; 1, la force de trainée est due à la viscosité et est linéaire par rapport à la vitesse F=kv et pour une sphère : F = -6&pi;&eta;Rv (R rayon de la sphère)<br>
     Pour 10<sup>3</sup>&lt;Re&lt;10<sup>5</sup> : la force est due au terme convectif et est <i>quadratique</i> par rapport à la vitesse : F = k&centerdot;||v||v et pour une sphère : F=-1/2 C<sub>x</sub>&rho;&pi;R&sup2;||v||v
+  </section>
+  <section id="MF3">
+    <h2>Dynamique des fluides en écoulement parfait</h2>
+    <h3>Modèle de l'écoulement parfait</h3>
+    <h4>Définition</h4>
+    Un écoulement est dit <bui>parfait</bui> si tous les phénomènes de transports diffusifs sont négligeables (diffusion qté de mouvement par la viscosité, diffusion de chaleur, de molécules...)<br>
+    <h4>Couche limite</h4>
+    On appelle couche limite visqueuse ou simplement <bui>couche limite</bui>, la zone de l'espace, au voisinage d'un obstacle, dans laquelle les phénomènes diffusifs ne sont pas négligeables
+    <bui>Calcul de l'épaisseur de la couche limite :</bui> Dans la couche limite, le transport diffusif domine alors qu'à l'extérieur, il s'agit du transport convectif. &Agrave; la frontière, les deux termes de N.S. sont du meme
+    ordre de grandeur : ||&rho;(v.grad)v|| &#12316; ||&eta;&Delta;v|| soit au final, en faisant un peu de calcul <span style="font-size: 9px;">(à faire si jamais)</span> : &delta; &#12316; (L&eta;/&rho;U)**0.5 = (L&nu;/U)**0.5<br>
+    <span style="font-size: 9px">&delta; est l'epaisseur de la couche limite donc la longueur caractéristique de la diffusion par viscosité</span>
+    <h3>L'équation d'Euler</h3>
+    <bui>Version 1 :</bui> &rho; (&part;v/&part;t + (v.grad)v) = -grad(P)+f (f=résultante des forces volumiques)<br>
+    <bui>Version 2 :</bui> &part;v/&part;t + (v.grad)v = -1/&rho; grad(P)+1/&rho;f<br>
+    <bui>Version 3 :</bui> &rho;(&part;v/&part;t +grad(v²/2)+rot(v)&wedge;v) = -grad(P) + f<br>
+    <h3>Théorème de Bernoulli</h3>
+    <h4 style="color:red;">Hypothèsess</h4>
+    <ul><li>&Eacute;tude en <strong>Référentiel galiléen</strong></li>
+      <li>On ne prend que la <strong>force volumique de pesanteur</strong> en compte</li>
+      <li>&Eacute;coulement <strong>parfait</strong> &rightarrow; on peut appliquer l'équation d'Euler</li>
+      <li>&Eacute;coulement <strong>Stationnaire</strong></li>
+      <li>&Eacute;coulement <strong>incompressible</strong></li>
+      <li>&Eacute;coulement <strong>homogène</strong></li>
+    </ul>
+    <h4>Formule</h4>
+    Une fois toute les hypothèses rassemblées, on a le <bui style="color: darkred;">Théorème de Bernoulli</bui> : <br>
+    P<sub>A</sub>+&rho;gz<sub>A</sub>+1/2&rho;v&sup2;<sub>A</sub> = P<sub>B</sub>+&rho;gz<sub>B</sub>+1/2&rho;v&sup2;<sub>B</sub><br>
+    <span style="font-style: 11px;">Ou A et B appartiennent à la meme ligne de courant qui aura été explicitée</span>
+    <h3>Applications</h3>
+    <bui>Effet venturi</bui> : La pression dans le fluide (qui respecte les hypothèses du théorème de Bernoulli) est plus faible là où la vitesse est élevée<br>
+    <bui>Le Tube de pitot</bui> : La mesure de (P<sub>A</sub> - P<sub>B</sub>) permet de connaitre la vitesse d'écoulement de l'air soit la vitesse de l'avion par rapport à l'air<br>
+    <bui>Vidange d'un réservoir </bui>: On peut montrer sous cetaines hypothèses que la vitesse d'éjection lors d'une vidange s'érit v=(2gh)**0.5 <span style="color:darkred; font-size:9px">(Relation de Toricelli)</span>   
   </section>
 </body>
 </html>
