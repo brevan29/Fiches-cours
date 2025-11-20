@@ -5,8 +5,14 @@
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="MecaFlu.css"/>
   <title>Mécanique des fluides</title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/es5/tex-mml-chtml.js"></script>
+  <script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 </head>
 <body>
   <a href="../../index.html" style="font-size: x-small;">Retour à la page d'accueil</a>
@@ -40,7 +46,7 @@ Inconvenient: Peu pratique pour exprimer les C.L.</p>
     Et pour plusieurs variables : $df = \dfrac{\partial f}{\partial x}\times dx + \dfrac{\partial f}{\partial y}\times dy + \dfrac{\partial f}{\partial z}\times dz$<br>
     On introduit l’opérateur dérivée particulaire (notée $\dfrac{D\bullet}{Dt}$) : $\dfrac{d\bullet}{dt} = \dfrac{\partial \bullet}{\partial t}+\left(\overrightarrow{v} . \overrightarrow{grad}\right)\bullet$<br>
     <h4>Cas de la masse volumique</h4>
-    $\dfrac(D\rho}{Dt} = \dfrac{\partial \rho}{\partial t}+(\overrightarrow{v} . \overrightarrow{grad})\rho$&emsp; Dérivée particulaire = dérivée locale + dérivée convective<br>
+    $\dfrac{D\rho}{Dt} = \dfrac{\partial \rho}{\partial t}+(\overrightarrow{v} . \overrightarrow{grad})\rho$&emsp; Dérivée particulaire = dérivée locale + dérivée convective<br>
     <bui>Écoulement incompressible</bui> : Toutes les particules de fluide gardent le même volume au cours du temps
     (en maths : $\dfrac{D\rho}{Dt} = 0$)</p>
   <h4>Dérivée particulaire du vecteur vitesse</h4>
@@ -51,13 +57,13 @@ Inconvenient: Peu pratique pour exprimer les C.L.</p>
   <h3>Équation de conservation de la masse</h3>
   <h4>Définitions</h4>
   <bui>Débit volumique D<sub>v</sub></bui> : (Volume de fluide traversant une surface orientée par unité de temps, compté positivement s’il est dans le sens du vecteur surface)
-  $\delta V = D_V\cdot\delta t (D_v \text{en m^3.s^{-1})$<br>
-  le debit volumique est égal à trevers une surface (S) est égal au flux du vecteur $\overrightarrow{v}$ à travers cette surface : $\text{D$_\text{v}$} = \iint{(S)} overrightarrow{v}.overrightarrow{dS}$<br>
+  $\delta V = D_V\cdot\delta t (D_V \text{en m$^3$.s$^{-1}$)}$<br>
+  le debit volumique est égal à trevers une surface (S) est égal au flux du vecteur $\overrightarrow{v}$ à travers cette surface : $\text{D$_\text{v}$} = \iint_{(S)} \overrightarrow{v}.\overrightarrow{dS}$<br>
   <bui>Débit massique D<sub>m</sub></bui> : (masse de fluide traversant une surface orientée par unité de temps, compté positivement s’il est dans le sens du vecteur surface)
   $\delta m = D_m \cdot \delta t  (D_m \text{en kg.s}^{-1})$<br>
   <bui>Vecteur densité de courant</bui> : $\overrightarrow{j}(M,t) = \rho (M,t).\overrightarrow{v}(M,t)$<br>
-  <bui>propriété</bui> : $\text{D$_\text{m}$} = \iint{(S)} overrightarrow{j}.overrightarrow{dS}$  <br>
-  <bui>Pour un fluide incompressible : </bui> $D_m = \rho \cdot D_v$<br>
+  <bui>propriété</bui> : $\text{D$_\text{m}$} = \iint_{(S)} \overrightarrow{j}.\overrightarrow{dS}$  <br>
+  <bui>Pour un fluide incompressible : </bui> $D_m = \rho \cdot D_V$<br>
   <h4>Eq locale de cons de la masse</h4>
   Sur une conduite cylindrique d’axe Ox, de sextion dS contenant un fluide en écoulement (sans source ou puits de fluide)<br>
   Le vecteur densité de courant s’écrit pour une seule dimension de l’espace $\overrightarrow{j}=j_x(x,t).\overrightarrow{u_x}$<br>
@@ -70,16 +76,16 @@ Inconvenient: Peu pratique pour exprimer les C.L.</p>
   <h4>Écoulement stationnaire</h4>
   <h5>Definition : </h5> Si tous les champs eulériens décrivant le système sont indépendant du temps alors écoulement stationnaire
   <h5>Propriétés :</h5>
-  &emsp; &bull; Le vecteur $\overrightarrow{j}$ est à flux conservatif $\left(\text{div}\left(\overrightarrow{j}\right) = 0 \text{(local)} \Leftrightarrow  \varoiint_{(S)}\overrightarrow{j}.\overrightarrow{dS} = 0 \text{(global)}\right)$  <br>
+  &emsp; &bull; Le vecteur $\overrightarrow{j}$ est à flux conservatif $\left(\text{div}\left(\overrightarrow{j}\right) = 0 \text{(local)} \Leftrightarrow  \oiint_{(S)}\overrightarrow{j}.\overrightarrow{dS} = 0 \text{(global)}\right)$  <br>
   &emsp; &emsp; &bull; <bui>Loi des branches</bui> : en RS, le débit massique se conserve : $D_m = cte$<br>
   &emsp; &emsp; &bull; <bui>Loi des noeuds</bui> : En RS au niveau d'une intersection : $D_{m1} = D_{m2} + D_{m3}$
   
   <h4>Écoulement incompressible</h4>
   Def, voir plus haut
   <h5>Propriétés</h5>
-  &emsp; &bull; Le vecteur $\overrightarrow{v}$ est à flux conservatif \left(\text{div}\left(\overrightarrow{j}\right) = 0 \text{(local)} \Leftrightarrow  \varoiint_{(S)}\overrightarrow{j}.\overrightarrow{dS} = 0 \text{(global)}\right)$<br>
-  &emsp; &emsp; &bull; <bui>Loi des branches</bui> : en RS, le débit volumique se conserve : $D_v = cte$<br>
-  &emsp; &emsp; &bull; <bui>Loi des noeuds</bui> : En RS au niveau d'une intersection : $D_{m1} = D_{m2} + D_{m3}$
+  &emsp; &bull; Le vecteur $\overrightarrow{v}$ est à flux conservatif $\left(\text{div}\left(\overrightarrow{v}\right) = 0 \text{(local)} \Leftrightarrow  \oiint_{(S)}\overrightarrow{v}.\overrightarrow{dS} = 0 \text{(global)}\right)$<br>
+  &emsp; &emsp; &bull; <bui>Loi des branches</bui> : en RS, le débit volumique se conserve : $D_V = cte$<br>
+  &emsp; &emsp; &bull; <bui>Loi des noeuds</bui> : En RS au niveau d'une intersection : $D_{V1} = D_{V2} + D_{V3}$
   
   <h4>Ecoulement irrotationnel</h4>
   Opérateur Rotationnel : $\overrightarrow{\text{rot}}\left(\overrightarrow{v}\right)$
