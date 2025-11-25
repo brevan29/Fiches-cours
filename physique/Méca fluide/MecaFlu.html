@@ -22,8 +22,8 @@ MathJax = {
 <h3>Façons de voir un fluide<h3>
   <h4>Vision Lagrangienne:</h4>
   <p>On suit le mouvement d'une seule et même particule fluide au cours du temps, pour decrire l’écoulement du fluide on procède ainsi pour toutes les particules du fluide<br>
-Avantage :une PF est un sys fermé donc on peut lui appliquer les lois de la méca/thermo.<br>
-Inconvenient: Peu pratique pour exprimer les C.L.</p>
+Avantage : une PF est un sys fermé donc on peut lui appliquer les lois de la méca/thermo.<br>
+Inconvenient : Peu pratique pour exprimer les C.L.</p>
   <h4>Vision Eulerienne</h4>
   <p>On étudie les mouvements du fluide en un point donné de l’espace, plusieurs particules fluide s’y succèderont au cours du temps. Pour décrire l’écoulement du fluide on procède ainsi pour tous les points de l’espace.</p>
   <h5>Courants</h5>
@@ -64,14 +64,14 @@ Inconvenient: Peu pratique pour exprimer les C.L.</p>
   <bui>Vecteur densité de courant</bui> : $\overrightarrow{j}(M,t) = \rho (M,t).\overrightarrow{v}(M,t)$<br>
   <bui>propriété</bui> : $\text{D$_\text{m}$} = \iint_{(S)} \overrightarrow{j}.\overrightarrow{dS}$  <br>
   <bui>Pour un fluide incompressible : </bui> $D_m = \rho \cdot D_V$<br>
-  <h4>Eq locale de cons de la masse</h4>
+  <h4>Equation locale de cons de la masse</h4>
   Sur une conduite cylindrique d’axe Ox, de sextion dS contenant un fluide en écoulement (sans source ou puits de fluide)<br>
   Le vecteur densité de courant s’écrit pour une seule dimension de l’espace $\overrightarrow{j}=j_x(x,t).\overrightarrow{u_x}$<br>
   le système étudié est le volume $dV=dS\cdot dx$ (compris entre x et x+dx)<br>
   En partant de $d^2m=\delta ^2m$ (variation de masse entre t et t+dt, masse entrant algébriquement dans le sys pdt dt) <br>
   on doit trouver $\dfrac{\partial \rho}{\partial t}=-\dfrac{\partial j_x}{\partial x}$ en 1D, <br>
   $\dfrac{\partial \rho}{\partial t} = -\text{div}(\overrightarrow{j})$ en 3D (où, dans les deux cas, $\overrightarrow{j}=\rho \overrightarrow{v}$)
-  
+
   <h3>Définitions et propriétés de qqes écoulements remarquables</h3>
   <h4>Écoulement stationnaire</h4>
   <h5>Definition : </h5> Si tous les champs eulériens décrivant le système sont indépendant du temps alors écoulement stationnaire
@@ -79,21 +79,21 @@ Inconvenient: Peu pratique pour exprimer les C.L.</p>
   &emsp; &bull; Le vecteur $\overrightarrow{j}$ est à flux conservatif $\left(\text{div}\left(\overrightarrow{j}\right) = 0 \text{(local)} \Leftrightarrow  \oiint_{(S)}\overrightarrow{j}.\overrightarrow{dS} = 0 \text{(global)}\right)$  <br>
   &emsp; &emsp; &bull; <bui>Loi des branches</bui> : en RS, le débit massique se conserve : $D_m = cte$<br>
   &emsp; &emsp; &bull; <bui>Loi des noeuds</bui> : En RS au niveau d'une intersection : $D_{m1} = D_{m2} + D_{m3}$
-  
+
   <h4>Écoulement incompressible</h4>
   Def, voir plus haut
   <h5>Propriétés</h5>
   &emsp; &bull; Le vecteur $\overrightarrow{v}$ est à flux conservatif $\left(\text{div}\left(\overrightarrow{v}\right) = 0 \text{(local)} \Leftrightarrow  \oiint_{(S)}\overrightarrow{v}.\overrightarrow{dS} = 0 \text{(global)}\right)$<br>
   &emsp; &emsp; &bull; <bui>Loi des branches</bui> : en RS, le débit volumique se conserve : $D_V = cte$<br>
   &emsp; &emsp; &bull; <bui>Loi des noeuds</bui> : En RS au niveau d'une intersection : $D_{V1} = D_{V2} + D_{V3}$
-  
+
   <h4>Ecoulement irrotationnel</h4>
   Opérateur Rotationnel : $\overrightarrow{\text{rot}}\left(\overrightarrow{v}\right)$
   <h5>Définition</h5>
   si $\overrightarrow{\text{rot}}\left(\overrightarrow{v}\right)$ est nul en tout point (le vecteur tourbillon est nul en tout point) alors l’écoulement est irrotationnel
   <h5>Propriétés</h5>
   &emsp; &bull; Si $\overrightarrow{\text{rot}}\left(\overrightarrow{v}\right) = \overrightarrow{0} \text{ alors } \overrightarrow{v} = \overrightarrow{\text{grad}}(\phi) \text{, $\phi$}$ étant appelé <u><i>potentiel de vitesse</i></u>
-  
+
   <h3>Conditions aux limites</h3>
   <h4>Cas d’un obstacle fluide</h4>
   En tout point d’un obstacle fixe et imperméable, la composante normale du champ de vitesse doit s’annuler, 
@@ -108,43 +108,42 @@ le champ de vitesses est tangent à la surface d’un obstacle en tout point ($\
   <h3>Forces qui s'exercent sur une particule de fluide</h3>
   <h4>Forces volumiques</h4>
   &rightarrow; Actions à <i>distance</i> s'exerçant sur le <i>volume</i> d'une particule de fluide <br>
-  <bui>Le poids</bui> : dF<sub>pes</sub> = dm.g &hArr; f<sub>g</sub> = &rho;&times;g <br>
-  Noter le &laquo; F &raquo; qui représente une force et &laquo; f &raquo; qui désigne une force volumique <br>
-  <bui>Force d'inertie d'entrainement</bui> : f<sub>ie</sub> = -&rho;a<sub>e</sub><br>
-  <bui>Force d'inertie de Coriolis</bui> : f<sub>ic</sub> = -&rho;a<sub>c</sub><br>
+  <bui>Le poids</bui> : $d\overrightarrow{F_{pes}} = dm \overrightarrow g \Leftrightarrow \overrightarrow{f_g} = \rho \overrightarrow g$ <br>
+    <span style="font-size : 9px">Noter le &laquo; F &raquo; qui représente une force et &laquo; f &raquo; qui désigne une force volumique</span> <br>
+  <bui>Force d'inertie d'entrainement</bui> : $\overrightarrow{f_{ie}} = -\rho \overrightarrow{a_e}$<br>
+  <bui>Force d'inertie de Coriolis</bui> : $\overrightarrow{f_{ic}} = -\rho \overrightarrow{a_c}$<br>
 <span style="font-size: 9px">Il suffit de remplacer dm (resp m) par &rho; (car dm=&rho;dV (resp m=&rho;V))</span>
   <h4>Forces surfacique de pression</h4>
-  <bui>Force élémentaire de Pression dans un fluide :</bui> dF = P(M,t).dS<sub>int</sub><br>
-  <bui>Equivalent volumique des forces de pression</bui> dF<sub>P</sub> = -grad(P)dV &hArr; F<sub>P</sub>
+  <bui>Force élémentaire de Pression dans un fluide :</bui> $dF = P(M,t).dS_{int}$<br>
+  <bui>Equivalent volumique des forces de pression</bui> $d\overrightarrow F_P = -\overrightarrow{\text{grad}}(P)dV \Leftrightarrow \overrightarrow{f_P} = - \overrightarrow{\text{grad}}(P)$
   <h4>Forces surfacique de viscosité</h4>
-  <bui>Force de viscosité</bui> : dF = &eta; &part;v<sub>x</sub>/&part;y &times; dS.u<sub>x</sub><br>
-  <bui>Equivalent volumique des force de viscosité</bui> f<sub>v</sub>=&eta;&Delta;v
+  <bui>Force de viscosité</bui> : $d\overrightarrow F = \eta \dfrac{\partial v_x}{\partial y} \times dS.\overrightarrow{u_x}$<br>
+  <bui>Equivalent volumique des force de viscosité</bui> $\overrightarrow{f_v}=\eta\Delta\overrightarrow v$
     <h3>Equation de Navier-Stokes</h3>
-    <bui>Version 1 :</bui> &rho; (&part;v/&part;t + (v.grad)v) = -grad(P)+&eta;&Delta;v+f (f=résultante des forces volumiques)<br>
-    <bui>Version 2 :</bui> &part;v/&part;t + (v.grad)v) = -1/&rho; grad(P)+&nu;&Delta;v+1/&rho;f (&nu; = viscosité cinématique définie par : &nu;=&eta;/&rho;)<br>
-    <bui>Version 3 :</bui> &rho;(&part;v/&part;t +grad(v²/2)+rot(v)&wedge;v) = &Sigma;F<sub>ext</sub>(/dV)<br>
+    <bui>Version 1 :</bui> $\rho \left(\dfrac {\partial \overrightarrow v}{\partial t} +  \left(\overrightarrow{v}.\overrightarrow{\text{grad}}\right)\overrightarrow{v}\right) = -\overrightarrow{\text{grad}}(P)+\eta\Delta\overrightarrow v+f \quad text{($f$ = résultante des forces volumiques)}<br>
+    <bui>Version 2 :</bui> $\dfrac {\partial \overrightarrow v}{\partial t} +  \left(\overrightarrow{v}.\overrightarrow{\text{grad}}\right)\overrightarrow{v} = -\frac{1}{\rho}\overrightarrow{\text{grad}}(P)+\nu\Delta\overrightarrow v+\frac{1}{\rho}f \quad\text{($\nu$ = viscosité cinématique définie par : $\nu=\frac{\eta}{\rho}$)}$<br>
+    <bui>Version 3 :</bui> $\rho \left(\dfrac{\partial v}{\partial t} +\overrightarrow{\text{grad}}\left(\dfrac{v^2}{2}\right)+\overrightarrow{rot}(\overrightarrow{v})\wedge \overrightarrow v\right) = \dfrac{\Sigma \overrightarrow {F_{ext}}}{dV}$<br>
     <span style="font-size: 11px">Rq : Il y a 4 inconnues  le champ de vitesse (3 inconnues scalaires) et le champ de pression (1 inconnue scalaire), N.S. nous donne 3 equations, la 4<sup>ème</sup>
       étant l'équation de conservation de la masse (cf plus haut)</span><br>
     <span style="font-size: 9px; color: darkred;">L'équation n'est pas linéaire, </span><span style="font-size : 9px">si v<sub>1</sub> et v<sub>2</sub> sont solution,
      &alpha;v<sub>1</sub>+&beta;v<sub>2</sub> ne l'est pas à priori</span>
     <h4>Exemples d'écoulement : Couette plan :</h4>
-    Eq de NS en considérant que les forces de Pression + gravité + viscosité, on obtient : &part;v<sub>x</sub>/&part;t = &nu;&part;&sup2;v<sub>x</sub>/&part;y&sup2; (&nu;v)<br>
-    C'est une équation de diffusion avec un coefficient de diffusion égal à la viscosité cinématique. Le terme &eta;&Delta;v correspond au transport diffusif.<br>
-    <bui>En R.S.</bui> : &part;v<sub>x</sub>/&part;t = &nu;&part;&sup2;v<sub>x</sub>/&part;y&sup2;, MAIS &part;v<sub>x</sub>/&part;t = 0 et &nu; &ne; 0 donc &part;&sup2;v<sub>x</sub>/&part;y&sup2; = 0 <br>
-    Après intégrations : v<sub>x</sub>(y) : Ay+B (A &ne; 0, B = 0, condition d'adhérence)
+    Eq de NS en considérant que les forces de Pression + gravité + viscosité, on obtient : $\dfrac{\partial \overrightarrow{v_x}}{\partial t} = \nu\dfrac{\partial^2 \overrightarrow{v_x}}{\partial y^2} $<br>
+    C'est une équation de diffusion avec un coefficient de diffusion égal à la viscosité cinématique. Le terme $\eta\Delta\overrightarrow v$ correspond au transport diffusif.<br>
+    <bui>En R.S.</bui> : $\dfrac{\partial v_x}{\partial t} = \nu\dfrac{\partial^2 v_x}{\partial y^2}\text{, MAIS }\dfrac{\partial v_x}{\partial t} = 0 \text{ et } \nu \neq 0 \text{ donc } \dfrac{\partial^2 v_x}{\partial y^2} = 0 \\ \text{Après intégrations : $v_x(y) = Ay+B$ ($A \neq 0$, $B = 0$, condition d'adhérence)}$
     <h3>Le Nombre de Reynolds pour caractériser un écoulement</h3>
     Le transport de quantité de mouvement peut se faire de deux manières :<br>
     &emsp; &bull; <bui>Transport diffusif</bui>, lié à la viscosité, s'effectue localement et perpendiculairement au champ des vitesses, caractérisé par &eta;&Delta;v dans N.S.<br>
     &emsp; &bull; <bui>Transport convectif</bui> lié à l'inertie, s'effectue localement et tangentiellement au champ des vitess, caractérisé par (v.grad)v dans N.S.<br>
     Donc on garde le plus important des deux pour simlifier l'équation : <br>
-    Nombre de Reynolds : ||Terme convectif||/||Terme diffusif|| = ||&rho;(v.grad)v||/||&eta;&Delta;v|| (<span style="font-size: 9px">||.|| signifie que l'on fait une estimation en ordre de grandeur)</span><br>
+    Nombre de Reynolds : $Re = \dfrac{\left\|\text{Terme convectif}\right\|}{\left\|\text{Terme diffusif}\right\|} = \dfrac{\left\|\rho\left(\overrightarrow{v}.\overrightarrow{\text{grad}}\right)\overrightarrow{v}\right\|}{\left\|\eta\Delta v\right\|}$ <span style="font-size: 9px">(||.|| signifie que l'on fait une estimation en ordre de grandeur)</span><br>
     &emsp;&bull; <bui>Re &gt;&gt;1 : </bui>Terme diffusif négligeable<br>
     &emsp;&bull; <bui>Re &lt;&lt;1 </bui>Terme convectif négligeable<br>
-    &emsp;&bull; <bui>Re 	&#126; 1</bui> Les deux termes sont à prendre en compte<br>
+    &emsp;&bull; <bui>Re &#126; 1</bui> Les deux termes sont à prendre en compte<br>
     <h3>Forcee de trainée</h3>
-    Expression générale de la force de trainée : F = -1/2 C<sub>x</sub>&rho;Sv&sup2;u<sub>x</sub> <br>
-    Pour Re &lt; 1, la force de trainée est due à la viscosité et est linéaire par rapport à la vitesse F=kv et pour une sphère : F = -6&pi;&eta;Rv (R rayon de la sphère)<br>
-    Pour 10<sup>3</sup>&lt;Re&lt;10<sup>5</sup> : la force est due au terme convectif et est <i>quadratique</i> par rapport à la vitesse : F = k&centerdot;||v||v et pour une sphère : F=-1/2 C<sub>x</sub>&rho;&pi;R&sup2;||v||v
+    Expression générale de la force de trainée : $\overrightarrow F = -\frac{1}{2} C_x \rho Sv^2.\overrightarrow{u_x}$<br>
+    Pour Re &lt; 1, la force de trainée est due à la viscosité et est linéaire par rapport à la vitesse $\overrightarrow F=k\overrightarrow v$ et pour une sphère : $\overrightarrow F = -6\pi\eta R\overrightarrow v \quad\text{($R$ rayon de la sphère)}$<br>
+    Pour 10<sup>3</sup>&lt;Re&lt;10<sup>5</sup> : la force est due au terme convectif et est <i>quadratique</i> par rapport à la vitesse : $\overrightarrow F = k.\left\|\overrightarrow v\right\|\overrightarrow v$ et pour une sphère : $\overrightarrow  F=-\frac{1}{2} C_x\rho\pi R^2 \left\|\overrightarrow v\right\|\overrightarrow v$
   </section>
   <section id="MF3">
     <h2>Dynamique des fluides en écoulement parfait</h2>
@@ -171,12 +170,24 @@ le champ de vitesses est tangent à la surface d’un obstacle en tout point ($\
     </ul>
     <h4>Formule</h4>
     Une fois toute les hypothèses rassemblées, on a le <bui style="color: darkred;">Théorème de Bernoulli</bui> : <br>
-    P<sub>A</sub>+&rho;gz<sub>A</sub>+1/2&rho;v&sup2;<sub>A</sub> = P<sub>B</sub>+&rho;gz<sub>B</sub>+1/2&rho;v&sup2;<sub>B</sub><br>
+    $P_A + \rho gz_A+\frac{1}{2}\rho v_A^2 = P_B + \rho gz_B+\frac{1}{2}\rho v_B^2$<br>
     <span style="font-style: 11px;">Ou A et B appartiennent à la meme ligne de courant qui aura été explicitée</span>
     <h3>Applications</h3>
     <bui>Effet venturi</bui> : La pression dans le fluide (qui respecte les hypothèses du théorème de Bernoulli) est plus faible là où la vitesse est élevée<br>
-    <bui>Le Tube de pitot</bui> : La mesure de (P<sub>A</sub> - P<sub>B</sub>) permet de connaitre la vitesse d'écoulement de l'air soit la vitesse de l'avion par rapport à l'air<br>
-    <bui>Vidange d'un réservoir </bui>: On peut montrer sous cetaines hypothèses que la vitesse d'éjection lors d'une vidange s'érit v=(2gh)**0.5 <span style="color:darkred; font-size:9px">(Relation de Toricelli)</span>   
+    <bui>Le Tube de pitot</bui> : La mesure de ($P_A - P_B$) permet de connaitre la vitesse d'écoulement de l'air soit la vitesse de l'avion par rapport à l'air<br>
+    <bui>Vidange d'un réservoir </bui>: On peut montrer sous cetaines hypothèses que la vitesse d'éjection lors d'une vidange s'écrit $v=\sqrt{2gh}$ <span style="color:darkred; font-size:9px">(Relation de Toricelli)</span>   
+  </section>
+  <section id="MF4">
+    <h2>Bilans macroscopiques</h2>
+    <h3>Mise en oeuvre d'un bilan</h3>
+      Voir les chapitres de thermo où il faut faire un bilan.
+    <h3>Forme des lois de la mécanique et de la thermo dynamique dans le cas d'un bilan </h3>
+      <bui>Conservation de la masse :</bui> $\dfrac{Dm*}{Dt}=0$<br>
+      <bui>PFD (ou loi de la quantité de mouvement) :</bui> $\dfrac{D\overrightarrow{p*}}{Dt}= \Sigma \overrightarrow{F_{ext}}$ <span style="font-size: 11px">où p est la quantité de mouvement $d\overrightarrow p = dm\overrightarrow v$ donc $\overrightarrow p = \iiint_{(v)} dm\overrightarrow v = \iiint_{(v)} \rho \overrightarrow v dV$</span><br>
+      <bui>TPC (Loi de l'énergie cinétique) :</bui> $\dfrac{DE_c}{Dt} = \Sigma P_{ext} + \Sigma P_{int}$ <span style="font-size: 11px">(admis si écoulement parfait et incompressible : $\Sigma P_{int} = 0$)</span><br>
+    		<bui>TMC (loi du moment cinétique) :</bui> $\dfrac{D\overrightarrow{L_o^*}}{Dt} = \Sigma\overrightarrow{M_o}(\overrightarrow{F_{ext}})$   <br><br>
+      <bui>1<sup>er</sup> principe :</bui> $\dfrac{DU^*}{Dt} + \dfrac{DE_c^*}{Dt} + \dfrac{DE_p^*}{Dt} = \dfrac{\delta W_{ext}}{dt} + \dfrac{\delta Q_{ext}}{dt}$<br><br>
+      <bui>2<sup>eme</sup> principe :</bui> $\dfrac{DS^*}{Dt} = \dfrac{1}{T}\times\dfrac{\delta Q_{ext}}{dt} + \dfrac{\delta S_c}{dt}$
   </section>
 </body>
 </html>
