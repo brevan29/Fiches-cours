@@ -3,11 +3,7 @@
 <html>
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" href=".TRF.css"/>
-  <link rel="stylesheet" href="./Francais.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css"/>
   <title>TRF 12 - Application du second principe</title>
   <script>
 MathJax = {
@@ -21,29 +17,30 @@ MathJax = {
 <body>
 				<h1>TRF 12 - Application du second principe</h1>
 				<h2>Enthalpie libre G</h2>
-				$\text{Enthalpie Libre : }G = H - TS\\
-				\text{Première identité termodynamique pour un système fermé de composition fixe : }dU = -PdV + TdS\\
-				\text{Deuxième identité termodynamique pour un système fermé de composition fixe : }dH = -VdP + TdS\\
-				\text{Différentielle de l'enthalpie libre pour un système fermé de composition fixe : }dG = VdP - SdT$
+				Enthalpie Libre : $G = H - TS\\$
+				Première identité termodynamique pour un système fermé de composition fixe : $dU = -PdV + TdS\\$
+				Deuxième identité termodynamique pour un système fermé de composition fixe : $dH = -VdP + TdS\\$
+				Différentielle de l'enthalpie libre pour un système fermé de composition fixe : $dG = VdP - SdT$
 				<h2>Expression du potentiel chimique $\mu$</h2>
-				$\text{L'enthalpie libre est une grandeur dans les variables naturelles sont la pression et la température, grandeurs controlées par le chimiste qui exploitera cette grandeur.}\\
-				\text{Le potentiel chimique $\mu _i$ est la dérivée partielle de G par rapport à la quantité de matière de cette espèce, à autres paramètres fixés : } \mu _i = \left(\dfrac{\partial G}{\partial n_i}\right)_{T, P, n_{j\ne i}}\\
-				\text{Relation d'Euler : } G = \sum _i \mu_i n_i$<br>
+			 L'enthalpie libre est une grandeur dans les variables naturelles sont la pression et la température, grandeurs controlées par le chimiste qui exploitera cette grandeur.<br>
+				Le potentiel chimique $\mu _i$ est la dérivée partielle de G par rapport à la quantité de matière de cette espèce, à autres paramètres fixés : $\mu _i = \left(\dfrac{\partial G}{\partial n_i}\right)_{T, P, n_{j\ne i}}$<br>
+				Relation d'Euler : $G = \sum _i \mu_i n_i$<br>
 				<h3>Expressions</h3>
-				$\text{Potentiel chimique d'une espèce en gaz parfait pur : }\mu _{i, \text{ GP pur}}(T, P)=\mu_{i, \text{ GP pur}}^°(T)+\\
-				\text{Avec $\mu_{i \text{ GP pur}}$ le potentiel chimique de l'espèce à la température considérée à la pression standard $P^° = 1,0$ bar appelé potentiel chimique standard}\\
-				\text{Potentiel chimique d'une espèce en mélange de gaz parfait : } \mu_{i\text{, méange idéal GP}}(T, P) = \mu_{i\text{mélange idéal GP}}^°(T)+RT\text{ ln}\left(\dfrac{P_i}{P^°}\right)\\
-				\text{Avec $\mu_{i\text{mélange idéal GP}}$ le potentiel chimique de cette meme espèce en GP pur à la pression $P^°=1,0$ bar}\\
-				\text{Autres modèles : }\\
-				\text{Pour une espèce en phase condensée, en considérant le volume molaire constant : } \mu^*_{i\text{, cd pure}}(T, P) = \mu^*_{i\text{, cd pure}}(T, P^°) + V_m \times (P-P^°)\\
-				\text{Gaz parfait au sein d'un mélange parfait de gaz : } \mu_{\text{GP $i$ en mélange idéal}}(T, P) = \mu^°_{\text{GP $i$ pur}}(T) + RT\text{ ln}\left(\dfrac{P}{P^°}\right)\\ 
-				\text{Constituant d'un mélange idéal en phase condensée : } \mu_{\text{$i$ cd idéale}}(T, P\text{, compo}) = \mu^°_{\text{$i$, cd pur}}(T) + RT\text{ ln}\left(x_i^{cd}\right)\\
-				\text{Soluté infiniment dilué : } \mu_{\text{$i$, solution}}(T, P \text{, compo}) = \mu^{°, \infty}_i(T) + RT\text{ ln}\left(\dfrac{C_i}{C^°}\right)\\
-				\text{Les corps pur se retrouvent en remplaçant $P_i$ par $P$ et $x_i^{cd}$ par $1$.$\\$ Le solvant de la solution se comporte comme un constituant liquide pur$\\$
-								Le potentiel chimique s'écrit de manière générale sous la forme : $\mu_i(T, P\text{, compo}) = \mu_i^°(T) + RT \text{ ln}(a_i) \\$ avec $a_i$ l'activité du constituant dont l'expression dépend de l'état physique}$
+				Potentiel chimique d'une espèce en gaz parfait pur : $\mu _{i, \text{ GP pur}}(T, P)=\mu_{i, \text{ GP pur}}^°(T)+RT \text{ln}\left(\dfrac{P}{P^°}\right)$<br>
+				Avec $\mu_{i \text{ GP pur}}$ le potentiel chimique de l'espèce à la température considérée à la pression standard $P^° = 1,0$ bar appelé potentiel chimique standard<br>
+				Potentiel chimique d'une espèce en mélange de gaz parfait : $\mu_{i\text{, méange idéal GP}}(T, P) = \mu_{i\text{mélange idéal GP}}^°(T)+RT\text{ ln}\left(\dfrac{P_i}{P^°}\right)$<br>
+				Avec $\mu_{i\text{mélange idéal GP}}$ le potentiel chimique de cette meme espèce en GP pur à la pression $P^°=1,0$ bar<br>
+				Autres modèles : <br>
+				Pour une espèce en phase condensée, en considérant le volume molaire constant : $\mu^*_{i\text{, cd pure}}(T, P) = \mu^*_{i\text{, cd pure}}(T, P^°) + V_m \times (P-P^°)$<br>
+				Gaz parfait au sein d'un mélange parfait de gaz : $\mu_{\text{GP $i$ en mélange idéal}}(T, P) = \mu^°_{\text{GP $i$ pur}}(T) + RT\text{ ln}\left(\dfrac{P}{P^°}\right)$<br>
+				Constituant d'un mélange idéal en phase condensée : $\mu_{\text{$i$ cd idéale}}(T, P\text{, compo}) = \mu^°_{\text{$i$, cd pur}}(T) + RT\text{ ln}\left(x_i^{cd}\right)$<br>
+				Soluté infiniment dilué : $\mu_{\text{$i$, solution}}(T, P \text{, compo}) = \mu^{°, \infty}_i(T) + RT\text{ ln}\left(\dfrac{C_i}{C^°}\right)$<br>
+				Les corps pur se retrouvent en remplaçant $P_i$ par $P$ et $x_i^{cd}$ par $1$.<br>
+    Le solvant de la solution se comporte comme un constituant liquide pur<br>
+								Le potentiel chimique s'écrit de manière générale sous la forme : $\mu_i(T, P\text{, compo}) = \mu_i^°(T) + RT \text{ ln}(a_i)$ avec $a_i$ l'activité du constituant dont l'expression dépend de l'état physique}
 				<h2>Utilisations du potentiel chimique $\mu$</h2>
 				<ul>
-								<li>L'enthalpie libre $G$ décroit lors d'une évolution spontanée et ext extrémale (minimale ou maximale) à l'équilibre. Elle est minimale pour un équilibre stable et maximale pour un équilibre instable, c'est-à-dire un équilibre qui est rompu par une perturbation extérieure. Ceci forme la condition d'évolutionet la condition d'équilibre pour l'enthalpie libre.</li>
-							 <li>Pour qu'une espèce soit en équilibre entre plusieurs phase, son potentiel chimique doit etre le meme dans toutes les phases. En cas de différence, la transformation s'effectue de la phae de potentiel chimique le plus élevé vers la phase de potentiel chimique le moins élevé.
-								<li>L'existence du solvant de part et d'autre d'une membrane semi-perméable au soluté entraine l'existence d'une différence de pression. C'est le phénomène d'osmose}</li></ul>
+								<li>L'enthalpie libre $G$ décroit lors d'une évolution spontanée et est extrémale (minimale ou maximale) à l'équilibre. Elle est minimale pour un équilibre stable et maximale pour un équilibre instable, c'est-à-dire un équilibre qui est rompu par une perturbation extérieure. Ceci forme la condition d'évolution et la condition d'équilibre pour l'enthalpie libre.</li>
+							 <li>Pour qu'une espèce soit en équilibre entre plusieurs phases, son potentiel chimique doit etre le meme dans toutes les phases. En cas de différence, la transformation s'effectue de la phase de potentiel chimique le plus élevé vers la phase de potentiel chimique le moins élevé.
+								<li>L'existence du solvant de part et d'autre d'une membrane semi-perméable au soluté entraine l'existence d'une différence de pression. C'est le phénomène d'osmose</li></ul>
 </body>
